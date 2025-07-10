@@ -168,6 +168,14 @@ vim.opt.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>')
 
+-- Spaces instead of tabs
+vim.opt.tabstop = 4 -- number of spaces that a tab counts for
+vim.opt.shiftwidth = 4 -- number of spaces to use for each step of indent
+vim.opt.softtabstop = 4 -- number of spaces that a tab counts for while editing
+vim.opt.shiftround = true -- round the indent to a multiple of shiftwidth
+vim.opt.expandtab = true -- expand tabs to spaces
+vim.opt.smartindent = true -- automatically indent a new line
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -963,7 +971,7 @@ require('lazy').setup {
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'python' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
